@@ -75,8 +75,8 @@ The library may work for other .Net versions, but as it is not maintained by the
 
 Original license [MIT](https://github.com/sarathkcm/Pluralize.NET/blob/master/LICENCE).
 
-### Contributors ::sparkles:
+### Contributors :sparkles:
 
-|![avatar](https://avatars.githubusercontent.com/u/5386817?v=4){width=150px}|![avatar](https://avatars.githubusercontent.com/u/2773690?v=4){width=150px}|![avatar](https://avatars.githubusercontent.com/u/14143311?v=4){width=150px}| ![avatar](https://avatars.githubusercontent.com/u/6270283?v=4){width=150px}|
+| <img src="https://avatars.githubusercontent.com/u/5386817?v=4" width="150" /> |<img src="https://avatars.githubusercontent.com/u/2773690?v=4){width=150px" width="150" />|<img src="https://avatars.githubusercontent.com/u/14143311?v=4){width=150px" width="150" />| <img src="https://avatars.githubusercontent.com/u/6270283?v=4" width="150" />|
 |--|--|--|--|
 |[Ashraf Sada](https://github.com/AshrafSada)|[Daniel Destouche](https://www.linkedin.com/in/daniel-destouche/)| [Sarath Kumar CM](https://github.com/sarathkcm)| [Dennis Pražák](https://sorashi.github.io/) |
