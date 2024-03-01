@@ -1,29 +1,29 @@
-# Pluralize Net Core
+# Pluralize Core
 
 This is an updated package from [Pluralize.NET](https://github.com/sarathkcm/Pluralize.NET) so it can now be used for Net Core.
 
-## What is Pluralize.NET (Original Package)?
+## What is Pluralize.Core?
 
-Pluralize.NET is a small C# library to pluralize and singularize English words.
+(Originally) Pluralize.NET is a small C# library to pluralize and singularize English words.
 
 ## How to use it?
 
 Package manage console:
 
 ```powershell
-PM> Install-Package Pluralize.NET.Core
+PM> Install-Package Pluralize.Core
 ```
 
 Dotnet cli:
 
 ```shell
-dotnet add package Pluralize.NET.Core
+dotnet add package Pluralize.Core
 ```
 
 Include the namespace:
 
 ```Csharp
-using Pluralize.NET.Core;
+using Pluralize.Core;
 ```
 
 write the code:
