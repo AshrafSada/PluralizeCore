@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <Title>Pluralize Core</Title>
+        <Version>2.0.0.1</Version>
+        <Description>Word pluralizer and singulizer, for .Net Core.</Description>
+        <Copyright>© 2024 Ashraf Sada, and others</Copyright>
+        <PackageProjectUrl>https://github.com/AshrafSada/PluralizeNetCore</PackageProjectUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryUrl>https://github.com/AshrafSada/PluralizeNetCore</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageTags>Word,pluralize,singularize</PackageTags>
+        <PackageIcon>icon.jpeg</PackageIcon>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <Authors>$(AssemblyName)</Authors>
+        <Product>$(AssemblyName)</Product>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\..\icon.jpeg">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+      <None Include="..\..\LICENSE">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+      <None Include="..\..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
+    </ItemGroup>
+</Project>
