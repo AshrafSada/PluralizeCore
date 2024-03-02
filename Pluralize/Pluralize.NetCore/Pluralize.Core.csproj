@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Title>Pluralize Core</Title>
-        <Version>2.0.0.1</Version>
+        <Version>2.0.0.3</Version>
         <Description>Word pluralizer and singulizer, for .Net Core.</Description>
         <Copyright>© 2024 Ashraf Sada, and others</Copyright>
         <PackageProjectUrl>https://github.com/AshrafSada/PluralizeNetCore</PackageProjectUrl>
@@ -17,22 +17,23 @@
         <PackageTags>Word,pluralize,singularize</PackageTags>
         <PackageIcon>icon.jpeg</PackageIcon>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        <Authors>$(AssemblyName)</Authors>
+        <Authors>Ashraf Sada,</Authors>
         <Product>$(AssemblyName)</Product>
+        <PackageReleaseNotes>Added word null and empty checks, with extra unit testing</PackageReleaseNotes>
     </PropertyGroup>
 
     <ItemGroup>
-      <None Include="..\..\icon.jpeg">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
-      <None Include="..\..\LICENSE">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
-      <None Include="..\..\README.md">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
+        <None Include="..\..\icon.jpeg">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\LICENSE">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+        <None Include="..\..\README.md">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
     </ItemGroup>
 </Project>
