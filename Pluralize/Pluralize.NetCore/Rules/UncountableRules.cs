@@ -2,7 +2,7 @@
 {
     internal static class UncountableRules
     {
-        public static List<string> GetUncountables()
+        public static List<string> GetUncountable()
         {
             return new List<string> {
                     // Singular words with no plurals.

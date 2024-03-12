@@ -7,19 +7,29 @@
         <Nullable>enable</Nullable>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Title>Pluralize Core</Title>
-        <Version>2.0.0.3</Version>
-        <Description>Word pluralizer and singulizer, for .Net Core.</Description>
+        <Version>2.0.4</Version>
+        <Description>Word pluralizer and singular, for .Net Core string</Description>
         <Copyright>© 2024 Ashraf Sada, and others</Copyright>
         <PackageProjectUrl>https://github.com/AshrafSada/PluralizeNetCore</PackageProjectUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <RepositoryUrl>https://github.com/AshrafSada/PluralizeNetCore</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageTags>Word,pluralize,singularize</PackageTags>
+        <PackageTags>Word,pluralize,singular</PackageTags>
         <PackageIcon>icon.jpeg</PackageIcon>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <Authors>Ashraf Sada,</Authors>
         <Product>$(AssemblyName)</Product>
         <PackageReleaseNotes>Added word null and empty checks, with extra unit testing</PackageReleaseNotes>
+        <FileVersion>2.0.4</FileVersion>
+        <AssemblyVersion>2.0.4</AssemblyVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">
+      <WarningLevel>7</WarningLevel>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0|AnyCPU'">
+      <WarningLevel>7</WarningLevel>
     </PropertyGroup>
 
     <ItemGroup>

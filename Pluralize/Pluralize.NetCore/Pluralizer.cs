@@ -8,7 +8,7 @@ namespace Pluralize.Core
     {
         private readonly Dictionary<Regex, string> _pluralRules = PluralRules.GetRules();
         private readonly Dictionary<Regex, string> _singularRules = SingularRules.GetRules();
-        private readonly List<string> _uncountables = UncountableRules.GetUncountables();
+        private readonly List<string> _uncountables = UncountableRules.GetUncountable();
         private readonly Dictionary<string, string> _irregularPlurals = IrregularRules.GetIrregularPlurals();
         private readonly Dictionary<string, string> _irregularSingles = IrregularRules.GetIrregularSingulars();
         private readonly Regex replacementRegex = new Regex("\\$(\\d{1,2})");
@@ -23,7 +23,7 @@ namespace Pluralize.Core
             return Transform(word, _irregularSingles, _irregularPlurals, _pluralRules);
         }
 
-        public string Singularize(string word)
+        public string Singular(string word)
         {
             if (string.IsNullOrEmpty(word) || string.IsNullOrWhiteSpace(word))
             {

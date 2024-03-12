@@ -6,7 +6,7 @@ namespace Pluralize.UnitTests
     public class PluralizerTests
     {
         [Fact]
-        public void Should_Pluralize_Data_From_Resources_File()
+        public void ShouldPluralizeDataFromResourcesFile()
         {
             // Arrange
             var pluralizer = new Pluralizer();
@@ -19,13 +19,13 @@ namespace Pluralize.UnitTests
                 var plural = line.Split(',')[1];
                 Assert.Equal(plural, pluralizer.Pluralize(singular));
                 Assert.Equal(plural, pluralizer.Pluralize(plural));
-                Assert.Equal(singular, pluralizer.Singularize(plural));
-                Assert.Equal(singular, pluralizer.Singularize(singular));
+                Assert.Equal(singular, pluralizer.Singular(plural));
+                Assert.Equal(singular, pluralizer.Singular(singular));
             }
         }
 
         [Fact]
-        public void Should_Singularize_Data_From_Resources_File()
+        public void ShouldSingularDataFromResourcesFile()
         {
             // Arrange
             var pluralizer = new Pluralizer();
@@ -36,15 +36,15 @@ namespace Pluralize.UnitTests
             {
                 var singular = line.Split(',')[0];
                 var plural = line.Split(',')[1];
-                Assert.Equal(singular, pluralizer.Singularize(plural));
-                Assert.Equal(singular, pluralizer.Singularize(singular));
+                Assert.Equal(singular, pluralizer.Singular(plural));
+                Assert.Equal(singular, pluralizer.Singular(singular));
                 Assert.Equal(plural, pluralizer.Pluralize(singular));
                 Assert.Equal(plural, pluralizer.Pluralize(plural));
             }
         }
 
         [Fact]
-        public void Should_Throw_NullOrEmptyWordException()
+        public void ShouldThrowNullOrEmptyWordException()
         {
             // Arrange
             var pluralizer = new Pluralizer();
@@ -54,9 +54,9 @@ namespace Pluralize.UnitTests
 
             // Act
             Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Pluralize(wordEmpty));
-            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Singularize(wordEmpty));
-            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Pluralize(wordNull));
-            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Singularize(wordNull));
+            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Singular(wordEmpty));
+            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Pluralize(wordNull!));
+            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Singular(wordNull!));
 
             // Assert
             Assert.Equal(expectedException.Message, new NullOrEmptyWordException().Message);
