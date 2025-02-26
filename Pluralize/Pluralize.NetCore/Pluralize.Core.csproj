@@ -7,7 +7,7 @@
         <Nullable>enable</Nullable>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Title>Pluralize Core</Title>
-        <Version>2.0.4</Version>
+        <Version>2.0.5</Version>
         <Description>Word pluralizer and singular, for .Net Core string</Description>
         <Copyright>© 2024 Ashraf Sada, and others</Copyright>
         <PackageProjectUrl>https://github.com/AshrafSada/PluralizeNetCore</PackageProjectUrl>
