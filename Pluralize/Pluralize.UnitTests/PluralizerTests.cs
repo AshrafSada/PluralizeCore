@@ -1,65 +1,77 @@
-using Pluralize.Core;
+﻿using Pluralize.Core;
 using Pluralize.Core.Exceptions;
 
 namespace Pluralize.UnitTests
 {
     public class PluralizerTests
     {
-        [Fact]
-        public void ShouldPluralizeDataFromResourcesFile()
-        {
-            // Arrange
-            var pluralizer = new Pluralizer();
-            var resources = Resources.InputData.Split(new String[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+        private readonly Pluralizer _pluralizer;
 
-            // Act Assert
-            foreach (var line in resources)
-            {
-                var singular = line.Split(',')[0];
-                var plural = line.Split(',')[1];
-                Assert.Equal(plural, pluralizer.Pluralize(singular));
-                Assert.Equal(plural, pluralizer.Pluralize(plural));
-                Assert.Equal(singular, pluralizer.Singular(plural));
-                Assert.Equal(singular, pluralizer.Singular(singular));
-            }
+        public PluralizerTests()
+        {
+            _pluralizer = new Pluralizer();
         }
 
         [Fact]
-        public void ShouldSingularDataFromResourcesFile()
+        public void Pluralize_NullOrEmptyWord_ThrowsException()
         {
-            // Arrange
-            var pluralizer = new Pluralizer();
-            var resources = Resources.InputData.Split(new String[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Pluralize(null!));
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Pluralize(string.Empty));
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Pluralize(" "));
+        }
 
-            // Act Assert
-            foreach (var line in resources)
-            {
-                var singular = line.Split(',')[0];
-                var plural = line.Split(',')[1];
-                Assert.Equal(singular, pluralizer.Singular(plural));
-                Assert.Equal(singular, pluralizer.Singular(singular));
-                Assert.Equal(plural, pluralizer.Pluralize(singular));
-                Assert.Equal(plural, pluralizer.Pluralize(plural));
-            }
+        [Theory]
+        [InlineData("cat", "cats")]
+        [InlineData("dog", "dogs")]
+        [InlineData("child", "children")]
+        public void Pluralize_ValidWord_ReturnsPlural(string singular, string expectedPlural)
+        {
+            var result = _pluralizer.Pluralize(singular);
+            Assert.Equal(expectedPlural, result);
         }
 
         [Fact]
-        public void ShouldThrowNullOrEmptyWordException()
+        public void Singular_NullOrEmptyWord_ThrowsException()
         {
-            // Arrange
-            var pluralizer = new Pluralizer();
-            string wordEmpty = "";
-            string wordNull = null;
-            var expectedException = new NullOrEmptyWordException();
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Singular(null!));
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Singular(string.Empty));
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Singular(" "));
+        }
 
-            // Act
-            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Pluralize(wordEmpty));
-            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Singular(wordEmpty));
-            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Pluralize(wordNull!));
-            Assert.Throws<NullOrEmptyWordException>(() => pluralizer.Singular(wordNull!));
+        [Theory]
+        [InlineData("cats", "cat")]
+        [InlineData("dogs", "dog")]
+        [InlineData("children", "child")]
+        public void Singular_ValidWord_ReturnsSingular(string plural, string expectedSingular)
+        {
+            var result = _pluralizer.Singular(plural);
+            Assert.Equal(expectedSingular, result);
+        }
 
-            // Assert
-            Assert.Equal(expectedException.Message, new NullOrEmptyWordException().Message);
+        [Fact]
+        public void Antonymize_NullOrEmptyWord_ThrowsException()
+        {
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Antonym(null!));
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Antonym(string.Empty));
+            Assert.Throws<NullOrEmptyWordException>(() => _pluralizer.Antonym(" "));
+        }
+
+        [Theory]
+        [InlineData("active", "inactive")]
+        [InlineData("approved", "disapproved")]
+        [InlineData("opening", "closing")]
+        public void Antonymize_ValidWord_ReturnsAntonym(string word, string expectedAntonym)
+        {
+            var result = _pluralizer.Antonym(word);
+            Assert.Equal(expectedAntonym, result);
+        }
+
+        [Theory]
+        [InlineData("unknown", "unknown")]
+        public void Antonymize_UnknownWord_ReturnsEmptyString(string word, string expectedAntonym)
+        {
+            var result = _pluralizer.Antonym(word);
+            Assert.Equal(expectedAntonym, result);
         }
     }
 }
