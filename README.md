@@ -65,6 +65,7 @@ pluralizer.Format(5, "dog", inclusive: true); // => "5 dogs"
 
 ### Supported .Net Versions
 
+- Net Standard 2.0
 - .Net Core 6.0
 - .Net Core 7.0
 - .Net Core 8.0

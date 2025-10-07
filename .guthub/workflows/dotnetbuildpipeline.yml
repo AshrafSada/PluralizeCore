@@ -9,12 +9,12 @@ jobs:
   build-and-test:
     runs-on: windows-2022
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v2
         with:
           dotnet-version: "8.0.414"
           include-prerelease: false
@@ -26,4 +26,4 @@ jobs:
         run: dotnet build --no-restore
 
       - name: Test
-        run: dotnet test --no-build --verbosity normal --filter 'FullQualifiedName!~Integrations'
+        run: dotnet test --no-build --verbosity normal'
