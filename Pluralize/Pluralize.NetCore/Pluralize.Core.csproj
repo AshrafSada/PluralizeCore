@@ -2,9 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>net8.0</TargetFramework>
-        <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <Title>Pluralize Core</Title>
         <Version>2.0.6</Version>
@@ -20,8 +20,8 @@
         <Authors>Ashraf Sada,</Authors>
         <Product>$(AssemblyName)</Product>
         <PackageReleaseNotes>Added word null and empty checks, with extra unit testing</PackageReleaseNotes>
-        <FileVersion>2.0.4</FileVersion>
-        <AssemblyVersion>2.0.4</AssemblyVersion>
+        <FileVersion>2.0.6</FileVersion>
+        <AssemblyVersion>2.0.6</AssemblyVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0|AnyCPU'">

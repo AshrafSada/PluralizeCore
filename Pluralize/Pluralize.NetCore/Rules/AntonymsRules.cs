@@ -1,4 +1,6 @@
-﻿namespace Pluralize.Core.Rules
+﻿using System.Collections.Generic;
+
+namespace Pluralize.Core.Rules
 {
     internal static class AntonymsRules
     {

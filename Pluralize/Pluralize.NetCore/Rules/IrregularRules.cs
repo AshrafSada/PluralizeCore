@@ -1,4 +1,7 @@
-﻿namespace Pluralize.Core.Rules
+﻿using System.Collections.Generic;
+using System.Linq;
+
+namespace Pluralize.Core.Rules
 {
     public static class IrregularRules
     {

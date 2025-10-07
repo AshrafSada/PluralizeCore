@@ -1,7 +1,10 @@
-﻿using System.Text.RegularExpressions;
-using Pluralize.Core.Exceptions;
+﻿using Pluralize.Core.Exceptions;
 using Pluralize.Core.Helpers;
 using Pluralize.Core.Rules;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Pluralize.Core
 {

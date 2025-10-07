@@ -1,13 +1,14 @@
 ﻿using System.Globalization;
 
-namespace Pluralize.Core.Helpers;
-
-public static class StringHelpers
+namespace Pluralize.Core.Helpers
 {
-    public static string ToTitle(this string word)
+    public static class StringHelpers
     {
-        if (string.IsNullOrEmpty(word))
-            return word;
-        return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(word);
+        public static string ToTitle(this string word)
+        {
+            if (string.IsNullOrEmpty(word))
+                return word;
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(word);
+        }
     }
 }
